@@ -20,8 +20,8 @@ public class Connector {
         clientEndPoint.connect(uri);
     }
 
-    public Producer producer() {
-        return new Producer(this);
+    public Producer producer(String queueName) {
+        return new Producer(this,queueName);
     }
 
     public void send(Object message) {
